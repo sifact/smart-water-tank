@@ -6,7 +6,7 @@ import { BaggageClaim } from "lucide-react";
 // bg-gradient-to-tr from-gray-900 to-green-50 h-[100vh]
 const Banner = () => {
   return (
-    <div className="mb-40">
+    <div className="mb-32">
       <div className="relative h-[110vh] w-full">
         <Image
           className="opacity-20 z-0 mt-[-4rem]"
@@ -15,8 +15,8 @@ const Banner = () => {
           fill
         />
 
-        <div className="absolute inset-0 flex justify-between container mx-auto">
-          <div className="w-1/2 mx-auto my-auto">
+        <div className="absolute inset-0 flex max-sm:flex-col container mx-auto">
+          <div className="sm:w-1/2 flex justify-center items-center">
             <Image
               className=""
               src="/smart-tank-1.png"
@@ -25,15 +25,19 @@ const Banner = () => {
               height={600}
             />
           </div>
-          <div className="w-1/2 gap-6 flex flex-col justify-center ">
-            <h1 className="text-6xl font-bold text-primaryLight leading-snug">
-              Smart Water Tank Controller
+          <div className="sm:w-1/2 gap-2 sm:gap-6 flex flex-col justify-center max-sm:items-center ">
+            <h1 className="text-3xl sm:text-5xl font-bold text-primaryLight  sm:leading-snug leading-normal">
+              SMART <span className="text-3xl">WATER</span> TANK{" "}
+              <span className="text-3xl">CONTROLLER</span>
             </h1>
-            <p className="text-3xl  leading-snug">
-              Save Water, Save Electricity, Save The Nature{" "}
+            <p
+              style={{ color: "#000000" }}
+              className=" sm:text-xl leading-normal sm:leading-snug"
+            >
+              Save water, Save Electricity, Save The Nature
             </p>
             <Button
-              className="mr-auto font-bold"
+              className="sm:mr-auto font-bold"
               variant="custom"
               size="custom"
             >

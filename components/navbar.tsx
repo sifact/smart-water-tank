@@ -124,7 +124,7 @@ const Navbar = () => {
             ))}
           </nav>
         </div>
-        <Link href="/log-in" className="max-sm:hidden">
+        <Link href="/login" className="max-sm:hidden">
           <Button
             className="font-bold text-white"
             variant="custom"

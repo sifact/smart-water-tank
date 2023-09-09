@@ -1,6 +1,9 @@
+import { AccordionDemo } from "@/components/accordian";
+import Feature1 from "@/components/auto-on-of";
 import Banner from "@/components/banner";
-import Feature1 from "@/components/feature1";
-import Feature2 from "@/components/feature2";
+import ContactUs from "@/components/contact-us";
+import Feature2 from "@/components/remote_bill";
+import TankApp from "@/components/tank-app";
 
 export default function Home() {
   return (
@@ -8,6 +11,9 @@ export default function Home() {
       <Banner />
       <Feature1 />
       <Feature2 />
+      <TankApp />
+      <AccordionDemo />
+      <ContactUs />
     </main>
   );
 }

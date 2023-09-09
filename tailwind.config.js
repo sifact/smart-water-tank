@@ -27,7 +27,8 @@ module.exports = {
     // },
     extend: {
       colors: {
-        primaryLight: "#00AB50",
+        primaryLight: "#00A82D",
+        secondaryCustom: "#CCEED5",
         primaryDark: "#007738",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
