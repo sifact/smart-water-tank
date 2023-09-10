@@ -19,7 +19,7 @@ export function AccordionDemo() {
         />
       </div>
       <div className="sm:w-1/2 mx-auto">
-        <h1 className="text-xl font-bold mb-4 tracking-wide">
+        <h1 className="text-3xl font-bold mb-4 tracking-wide text-primaryLight">
           স্মার্ট ওয়াটার ট্যাঙ্ক নিয়ে আপনার যতো জিজ্ঞাসা
         </h1>
         <Accordion type="single" collapsible className="sm:w-[80%]">
@@ -33,10 +33,10 @@ export function AccordionDemo() {
           <AccordionItem value="item-2">
             <AccordionTrigger>রিপ্লেসমেন্ট গ্যারান্টি আছে?</AccordionTrigger>
             <AccordionContent>
-              হ্যা, সারা জীবনের জন্য পেইড রিপ্লেসমেন্ট গ্যারান্টি পাবেন। যদি
-              আপনার ডিভাইসে কোন সমস্যা দেখা দেয় আর আপনি এটা ঠিক করার জন্য
-              অপেক্ষা করতে চাননা সেক্ষেত্রে পুরনো ডিভাইস ফেরত দিয়ে এবং ডিভাইসের
-              মূল্যের 40% টাকা পরিশোধ করার মাধ্যমে নতুন ডিভাইস পাবেন।
+              হ্যা, পেইড রিপ্লেসমেন্ট গ্যারান্টি পাবেন। যদি আপনার ডিভাইসে কোন
+              সমস্যা দেখা দেয় আর আপনি এটা ঠিক করার জন্য অপেক্ষা করতে না চান
+              সেক্ষেত্রে ব্যবহৃত ডিভাইস ফেরত দিয়ে এবং ডিভাইসের মূল্যের 40% টাকা
+              পরিশোধ করে নতুন ডিভাইস পাবেন।
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

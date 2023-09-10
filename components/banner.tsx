@@ -15,6 +15,8 @@ const Banner = () => {
           fill
         />
 
+        <div className="w-full h-[30px] bg-white absolute bottom-[3rem] left-0"></div>
+
         <div className="absolute inset-0 flex max-sm:flex-col container mx-auto">
           <div className="sm:w-1/2 flex justify-center items-center">
             <Image
@@ -30,14 +32,11 @@ const Banner = () => {
               SMART <span className="text-3xl">WATER</span> TANK{" "}
               <span className="text-3xl">CONTROLLER</span>
             </h1>
-            <p
-              style={{ color: "#000000" }}
-              className=" sm:text-xl leading-normal sm:leading-snug"
-            >
+            <p className="text-gray-600 font-semibold sm:text-xl leading-normal sm:leading-snug">
               Save water, Save Electricity, Save The Nature
             </p>
             <Button
-              className="sm:mr-auto font-bold"
+              className="sm:mr-auto font-bold text-sm"
               variant="custom"
               size="custom"
             >

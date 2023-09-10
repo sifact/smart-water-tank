@@ -43,7 +43,7 @@ const Footer = () => {
 
             <Link href="">Affiliate Dashboard</Link>
             <Link href="">Terms of use</Link>
-            <Link href="">About Us</Link>
+            <Link href="">Privacy policy</Link>
           </div>
 
           {/* 3red */}
@@ -51,7 +51,7 @@ const Footer = () => {
             <h1 className="font-bold pb-4">Help & Guideline</h1>
             <Link href="">Track my order</Link>
             <Link href="/tutorial">Tutorial</Link>
-            <Link href="">About Us</Link>
+            <Link href="">Contact us</Link>
           </div>
 
           {/* 4th */}

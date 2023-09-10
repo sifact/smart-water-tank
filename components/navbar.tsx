@@ -125,11 +125,7 @@ const Navbar = () => {
           </nav>
         </div>
         <Link href="/login" className="max-sm:hidden">
-          <Button
-            className="font-bold text-white"
-            variant="custom"
-            size="custom"
-          >
+          <Button className="text-sm" variant="custom" size="custom">
             Log-in
             <LogIn className="ml-2 h-4 w-4" />
           </Button>

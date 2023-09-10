@@ -22,7 +22,7 @@ const Feature1 = () => {
               অটোমেটিক অন / অফ
             </h1>
             <p className="text-xl leading-snug">
-              স্মার্ট ওয়াটার ট্যানক কন্ট্রোলার সয়ংক্রিয়ভাবে পানির পরিমাণ সনাক্ত
+              স্মার্ট ওয়াটার ট্যাঙ্ক কন্ট্রোলার সয়ংক্রিয়ভাবে পানির পরিমাণ সনাক্ত
               করে পাম্প চালু এবং বন্ধ করে।
             </p>
 
@@ -32,7 +32,7 @@ const Feature1 = () => {
               size="custom"
               style={{ width: "fit-content" }}
             >
-              Buy Now
+              এখনি কিনুন
               <BaggageClaim className="ml-4 h-6 w-6" />
             </Button>
           </div>

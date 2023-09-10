@@ -37,14 +37,14 @@ const Feature2 = () => {
           </h1>
           <p className="text-xl leading-snug">
             পৃথিবীর যেকোনও জায়গা থেকে পাম্প চালু এবং বন্ধ করতে পারবেন এছাড়াও
-            পামির ট্যাংক কতোটুকু পানি আছে দেখতে পারবেন।
+            পানির ট্যাঙ্কে কতোটুকু পানি আছে তাও দেখতে পারবেন।
           </p>
           <Button
             className="sm:mr-auto font-bold"
             variant="custom"
             size="custom"
           >
-            Buy Now
+            এখনি কিনুন
             <BaggageClaim className="ml-4 h-6 w-6" />
           </Button>
         </div>
@@ -67,14 +67,14 @@ const Feature2 = () => {
               বিদ্যুৎ বিল সাশ্রয় করুন
             </h1>
             <p className="text-xl leading-snug">
-              স্মার্ট ওয়াটার ট্যাঙ্ক কন্ট্রোলার পানি এবং বিদ্যুৎ বিল সাশ্রয় করবে
+              স্মার্ট ওয়াটার ট্যাঙ্ক কন্ট্রোলার পানি এবং বিদ্যুৎ বিল সাশ্রয় করে।
             </p>
             <Button
               className="sm:mr-auto font-bold"
               variant="custom"
               size="custom"
             >
-              Buy Now
+              এখনি কিনুন
               <BaggageClaim className="ml-4 h-6 w-6" />
             </Button>
           </div>
