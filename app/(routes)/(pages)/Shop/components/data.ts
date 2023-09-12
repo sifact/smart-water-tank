@@ -4,32 +4,33 @@ export const products = [
     img: "/full-package.png",
     name: "Smart Water Tank Controller",
     type: "Complete package",
-    minPrice: "3,000",
-    maxPrice: "3,800",
+    minPrice: "৩,০০০",
+    maxPrice: "৩,৮০০",
     button: "Select options",
     description:
       "Mobile app to monitor water level and electricity usage Mobile app to control the water pump start/stop 10 ft Detection Range Upto 2HP water pump can be controlled",
     code: "IOT_01",
     categories: "Categories: Controller, Smart Device",
     tag: "IOT, smart device, water tank controller",
+
     wireLength: [
       {
         id: 1,
-        length: "1 story (40ft)",
-        price: "3,000",
-        buildingHeight: "1 তলা (40ft)",
+        length: "১ তলা (৪০ ফুট)",
+        price: "৩,০০০",
+        buildingHeight: "১ তলা (৪০ ফুট)",
       },
       {
         id: 2,
-        length: "1 story (60ft)",
-        price: "3,200",
-        buildingHeight: "3 তলা (60ft)",
+        length: "৩ তলা (৬০ ফুট)",
+        price: "৩,২০০",
+        buildingHeight: "৩ তলা (৬০ ফুট)",
       },
       {
         id: 3,
-        length: "1 story (120ft)",
-        price: "3,800",
-        buildingHeight: "৫ তলা (120ft)",
+        length: "৫ তলা (১২০ ফুট)",
+        price: "৩,৮০০",
+        buildingHeight: "৫ তলা (১২০ ফুট)",
       },
     ],
     tableDescription: [
@@ -88,12 +89,66 @@ export const products = [
       },
     ],
   },
+
   {
     id: 2,
+    img: "/sensor-wire.png",
+    name: "Smart Water Tank Sensor & Wire",
+    type: "Only sensor & wire",
+    minPrice: "৫০০",
+    maxPrice: "১,৩০০",
+    button: "Select options",
+    description:
+      "This is the sensor and wire for your smart water tank controller device. You can also buy the complete package here. but if you only need wire with sensor, then buy this product only.",
+    code: "IOT_03",
+    categories: "Sensor and wire",
+    tag: "IOT, smart device, water tank controller",
+    wireLength: [
+      {
+        id: 1,
+        length: "১ তলা (৪০ ফুট)",
+        price: "৫০০",
+        buildingHeight: "১ তলা (৪০ ফুট)",
+      },
+
+      {
+        id: 2,
+        length: "৩ তলা (৬০ ফুট)",
+        price: "৭০০",
+        buildingHeight: "৩ তলা (৬০ ফুট)",
+      },
+      {
+        id: 3,
+        length: "৫ তলা (১২০ ফুট)",
+        price: "১,৩০০",
+        buildingHeight: "৫ তলা (১২০ ফুট)",
+      },
+    ],
+    tableDescription: [
+      {
+        name: "",
+        value:
+          "  This is the sensor and wire for your smart water tank controller device. You can also buy the complete package here. but if you only need wire with sensor, then buy this product only.",
+      },
+    ],
+    specification: [
+      {
+        name: "Weight",
+        value: "0.350kg",
+      },
+      {
+        name: "Dimensions",
+        value: "10 x 10 x 5cm",
+      },
+    ],
+  },
+
+  {
+    id: 3,
     img: "/device-removebg.png",
     name: "Smart Water Tank Device",
     type: "Only device",
-    minPrice: "2,500",
+    minPrice: "২,৫০০",
     button: "Buy now",
     description:
       "Best smart tank controller to manage your house water pump automatically. You can forget about your water pump starting or stopping after you easily setup a smart water tank controller from Roboidy.",
@@ -120,58 +175,6 @@ export const products = [
         name: "Building Height",
         value:
           "1story ( 45ft ), 2story ( 60ft ), 3story ( 75ft ), 4story ( 90ft ), 5story ( 105ft )",
-      },
-    ],
-  },
-
-  {
-    id: 3,
-    img: "/sensor-wire.png",
-    name: "Smart Water Tank Sensor & Wire",
-    type: "Only sensor & wire",
-    minPrice: "500",
-    maxPrice: "1300",
-    button: "Select options",
-    description:
-      "This is the sensor and wire for your smart water tank controller device. You can also buy the complete package here. but if you only need wire with sensor, then buy this product only.",
-    code: "IOT_03",
-    categories: "Sensor and wire",
-    tag: "IOT, smart device, water tank controller",
-    wireLength: [
-      {
-        id: 1,
-        length: "1 story (40ft)",
-        price: "500",
-        buildingHeight: "1 তলা (40ft)",
-      },
-      {
-        id: 2,
-        length: "1 story (60ft)",
-        price: "700",
-        buildingHeight: "3 তলা (60ft)",
-      },
-      {
-        id: 3,
-        length: "1 story (120ft)",
-        price: "1300",
-        buildingHeight: "৫ তলা (120ft)",
-      },
-    ],
-    tableDescription: [
-      {
-        name: "",
-        value:
-          "  This is the sensor and wire for your smart water tank controller device. You can also buy the complete package here. but if you only need wire with sensor, then buy this product only.",
-      },
-    ],
-    specification: [
-      {
-        name: "Weight",
-        value: "0.350kg",
-      },
-      {
-        name: "Dimensions",
-        value: "10 x 10 x 5cm",
       },
     ],
   },

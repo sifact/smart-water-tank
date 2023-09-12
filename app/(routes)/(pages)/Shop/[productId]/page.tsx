@@ -26,7 +26,7 @@ import { columns } from "./components/column";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const page = ({ params }: { params: { productId: string } }) => {
-  const [buildingHeight, setBuildingHeight] = useState("");
+  const [buildingHeight, setBuildingHeight] = useState("৪০ ফুট - ১২০ ফুট");
   const [wirePrice, setWirePrice] = useState(null);
   const [activeIndex, setActiveIndex] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
@@ -53,7 +53,7 @@ const page = ({ params }: { params: { productId: string } }) => {
     <div className="mb-32 container mx-auto">
       <h1 className="text-xl font-semibold my-16">{product?.name}</h1>
       <div className=" flex  max-sm:flex-col items-center  max-sm:gap-6">
-        <div className="w-1/2 flex justify-center m-0">
+        <div className="sm:w-1/2 flex justify-center m-0">
           <Image
             className="rounded-md"
             src={product?.img!}
@@ -64,9 +64,9 @@ const page = ({ params }: { params: { productId: string } }) => {
         </div>
 
         <div className="sm:w-1/2 flex justify-center">
-          <div className=" gap-6 flex flex-col sm:w-[70%] max-sm:items-center">
+          <div className=" gap-6 flex flex-col sm:w-[70%] ">
             {!wirePrice ? (
-              <div className="flex gap-2 text-red-500 font-bold">
+              <div className="flex gap-2 text-red-500 text-xl font-bold">
                 <span className="flex items-center gap-1">
                   <FaBangladeshiTakaSign /> {product?.minPrice}
                 </span>
@@ -80,18 +80,20 @@ const page = ({ params }: { params: { productId: string } }) => {
                 )}
               </div>
             ) : (
-              <span className="flex items-center gap-1 text-red-500 font-bold">
+              <span className="flex items-center gap-1 text-red-500 font-bold text-xl">
                 <FaBangladeshiTakaSign /> {wirePrice}
               </span>
             )}
 
-            <p className="text-xl leading-snug">{product?.description}</p>
+            <p className=" leading-snug opacity-60">{product?.description}</p>
 
-            <div>
-              {product?.id !== 2 && (
-                <h1 className="pb-4">Sensor height: {buildingHeight}</h1>
+            <div className="mr-auto">
+              {product?.id !== 3 && (
+                <h1 className="pb-4">
+                  বাসার উচ্চতা (তারের দৈর্ঘ্য): {buildingHeight}
+                </h1>
               )}
-              <div className="flex gap-4">
+              <div className="flex max-md:flex-col items-start gap-4">
                 {product?.wireLength &&
                   product.wireLength.map((wire, idx) => {
                     return (
@@ -123,8 +125,16 @@ const page = ({ params }: { params: { productId: string } }) => {
                   })}
               </div>
             </div>
+
+            {/* <Button
+              className="mr-auto cursor-default text-primaryLight"
+              variant="customSecondary"
+              size="customSecondary"
+            >
+              In stock
+            </Button> */}
             <Button
-              className="sm:mr-auto text-sm font-bold"
+              className="mr-auto text-sm font-bold"
               variant="custom"
               size="custom"
             >
@@ -135,13 +145,13 @@ const page = ({ params }: { params: { productId: string } }) => {
             <Separator />
 
             <p>SKU: {product?.code}</p>
-            <p>Categories: {product?.categories}</p>
-            <p>Tags: {product?.tag}</p>
+            {/* <p>Categories: {product?.categories}</p>
+            <p>Tags: {product?.tag}</p> */}
           </div>
         </div>
       </div>
 
-      <div className="w-[60%] mx-auto mt-20">
+      <div className="md:w-[60%] mx-auto mt-20">
         <Tabs defaultValue="Description" className="w-full">
           <TabsList className="w-full flex justify-evenly">
             <TabsTrigger value="Description">Description</TabsTrigger>

@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@200;300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,8 +8,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"); */
 
 body {
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 0.8px;
+  font-family: "Noto Sans Bengali", sans-serif;
+  /* letter-spacing: 0.8px; */
 }
 
 @layer base {
@@ -84,3 +86,30 @@ body {
 }
 
 /* #00AB50 */
+
+.header_custom {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* background-size: cover; */
+}
+
+.header_custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 1%; /* Adjust the padding-top percentage to your desired aspect ratio */
+  background-image: url("https://watertankcontroller.com/wp-content/uploads/2023/08/3.png");
+  opacity: 0.2;
+  background-size: cover;
+  object-fit: cover;
+  z-index: -1;
+  background-position: center center;
+}

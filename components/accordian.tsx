@@ -1,3 +1,4 @@
+"use client";
 import {
   Accordion,
   AccordionContent,
@@ -19,10 +20,15 @@ export function AccordionDemo() {
         />
       </div>
       <div className="sm:w-1/2 mx-auto">
-        <h1 className="text-3xl font-bold mb-4 tracking-wide text-primaryLight">
+        <h1 className="text-xl font-bold mb-4 tracking-wide text-primaryLight max-sm:text-center">
           স্মার্ট ওয়াটার ট্যাঙ্ক নিয়ে আপনার যতো জিজ্ঞাসা
         </h1>
-        <Accordion type="single" collapsible className="sm:w-[80%]">
+        <Accordion
+          type="single"
+          defaultValue="item-1"
+          collapsible
+          className="sm:w-[80%]"
+        >
           <AccordionItem value="item-1">
             <AccordionTrigger>কোনও ওয়ারেন্টি আছে?</AccordionTrigger>
             <AccordionContent>
@@ -43,7 +49,7 @@ export function AccordionDemo() {
             <AccordionTrigger>
               কতোটা সঠিকভাবে এই ডিভাইস পানির পরিমাণ সনাক্ত করতে পারে?
             </AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className="text-left">
               আমাদের ডিভাইস অধিকাংশ সময়ই ৯৯% নির্ভুলভাবে পানির পরিমাণ সনাক্ত
               করতে পারে।
             </AccordionContent>
