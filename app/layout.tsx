@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import Footer from "@/components/footer";
-
+import { Toaster } from "react-hot-toast";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Toaster />
         <Navbar />
         {children}
         <Footer />

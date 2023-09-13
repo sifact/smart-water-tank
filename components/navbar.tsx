@@ -87,7 +87,7 @@ const Navbar = () => {
                         </SheetClose>
                       ))}
                     </nav>
-                    <Link href="/log-in">
+                    <Link href="/login">
                       <Button
                         className="font-bold text-white"
                         variant="custom"
