@@ -2,16 +2,16 @@ export const products = [
   {
     id: 1,
     img: "/full-package.png",
-    name: "Smart Water Tank Controller",
-    type: "Complete package",
+    name: "স্মার্ট ওয়াটার ট্যাঙ্ক কন্ট্রোলার",
+    type: "সম্পূর্ণ প্যাকেজ",
     minPrice: "৩,০০০",
     maxPrice: "৩,৮০০",
     button: "Select options",
     description:
-      "Mobile app to monitor water level and electricity usage Mobile app to control the water pump start/stop 10 ft Detection Range Upto 2HP water pump can be controlled",
+      "মোবাইল অ্যাপ দিয়ে পানির পরিমাণ দেখুন, বিদ্যুৎ খরচ দেখুন এবং পানির পাম্প বন্ধ এবং চালু করুন।",
+    // description:
+    //   "Mobile app to monitor water level and electricity usage Mobile app to control the water pump start/stop 10 ft Detection Range Upto 2HP water pump can be controlled",
     code: "IOT_01",
-    categories: "Categories: Controller, Smart Device",
-    tag: "IOT, smart device, water tank controller",
 
     wireLength: [
       {
@@ -33,19 +33,22 @@ export const products = [
         buildingHeight: "৫ তলা (১২০ ফুট)",
       },
     ],
-    tableDescription: [
+    endDescription:
+      "মোবাইল অ্যাপ দিয়ে পানির পরিমাণ দেখুন, বিদ্যুৎ খরচ দেখুন এবং পানির পাম্প বন্ধ এবং চালু করুন।",
+    includePackage: ["স্মার্ট ওয়াটার ট্যাঙ্ক ডিভাইস", "সেন্সর এবং তার"],
+
+    specification: [
       {
         name: "Brand",
         value: "Roboidy",
       },
       {
         name: "Model Number",
-        value:
-          "Automatic Water Level Controller, with Dry Run Protection and Mobile app Based Water Level Indicator with 1 + 1 Year Replacement Warranty.",
+        value: "SWTCV10",
       },
       {
         name: "Wired/Wireless",
-        value: "Wired",
+        value: "Both",
       },
       {
         name: "Number of Sensors",
@@ -69,6 +72,18 @@ export const products = [
         value: "WATER LEVEL INDICATION IN MOBILE APP",
       },
       {
+        name: "Input Voltage",
+        value: "160v - 275v",
+      },
+      {
+        name: " Load",
+        value: "0.5HP / 1HP / 2HP",
+      },
+      {
+        name: "WiFi",
+        value: "2.4Ghz, WPA/WPA2, IEEE 802.11/b/g/n",
+      },
+      {
         name: "Detection Angle",
         value: "120 degree",
       },
@@ -76,16 +91,13 @@ export const products = [
         name: "Suitable For",
         value: "220 – 240V AC WATER PUMP UPTO 2HP",
       },
-    ],
-    specification: [
       {
         name: "Weight",
         value: "0.5 kg",
       },
       {
         name: "Building Height",
-        value:
-          "1story ( 45ft ), 2story ( 60ft ), 3story ( 75ft ), 4story ( 90ft ), 5story ( 105ft )",
+        value: "১ তলা (৪০ ফুট), ৩ তলা (৬০ ফুট), ৫ তলা (১২০ ফুট)",
       },
     ],
   },
@@ -93,13 +105,15 @@ export const products = [
   {
     id: 2,
     img: "/sensor-wire.png",
-    name: "Smart Water Tank Sensor & Wire",
-    type: "Only sensor & wire",
+    name: "স্মার্ট ওয়াটার ট্যাঙ্ক সেন্সর এবং তার  ",
+    type: "শুধু সেন্সর এবং তার",
     minPrice: "৫০০",
     maxPrice: "১,৩০০",
     button: "Select options",
     description:
-      "This is the sensor and wire for your smart water tank controller device. You can also buy the complete package here. but if you only need wire with sensor, then buy this product only.",
+      "এটি হচ্ছে স্মার্ট ওয়াটার ট্যাঙ্ক ডিভাইসের সেন্সর এবং তার। আপনি চাইলে সম্পূর্ণ প্যাকেজও কিনতে পারেন। যদি আপনার শুধু সেন্সর এবং তার পরিবর্তন করার প্রয়োজন হয় সেক্ষেত্রে এটি কিনুন।",
+    // description:
+    //   "This is the sensor and wire for your smart water tank controller device. You can also buy the complete package here. but if you only need wire with sensor, then buy this product only.",
     code: "IOT_03",
     categories: "Sensor and wire",
     tag: "IOT, smart device, water tank controller",
@@ -124,13 +138,10 @@ export const products = [
         buildingHeight: "৫ তলা (১২০ ফুট)",
       },
     ],
-    tableDescription: [
-      {
-        name: "",
-        value:
-          "  This is the sensor and wire for your smart water tank controller device. You can also buy the complete package here. but if you only need wire with sensor, then buy this product only.",
-      },
-    ],
+    endDescription:
+      "এটি হচ্ছে স্মার্ট ওয়াটার ট্যাঙ্ক ডিভাইসের সেন্সর এবং তার। আপনি চাইলে সম্পূর্ণ প্যাকেজও কিনতে পারেন। যদি আপনার শুধু সেন্সর এবং তার পরিবর্তন করার প্রয়োজন হয় সেক্ষেত্রে এটি কিনুন।",
+    includePackage: ["সেন্সর এবং তার"],
+
     specification: [
       {
         name: "Weight",
@@ -146,22 +157,20 @@ export const products = [
   {
     id: 3,
     img: "/device-removebg.png",
-    name: "Smart Water Tank Device",
-    type: "Only device",
+    name: "স্মার্ট ওয়াটার ট্যাঙ্ক ডিভাইস",
+    type: "শুধু ডিভাইস",
     minPrice: "২,৫০০",
     button: "Buy now",
     description:
-      "Best smart tank controller to manage your house water pump automatically. You can forget about your water pump starting or stopping after you easily setup a smart water tank controller from Roboidy.",
+      "আপনার বাসার পানির পাম্প নিয়ন্ত্রণে সেরা ওয়াটার ট্যাঙ্ক কন্ট্রোলার। খুব সহজে Roboidy থেকে একটি স্মার্ট ওয়াটার ট্যাঙ্ক কন্ট্রোলার সেটআপ করে পানির পাম্প চালু এবং বন্ধ করার কাজ থেকে মুক্ত হোন।",
+    // description:
+    //   "Best smart tank controller to manage your house water pump automatically. You can forget about your water pump starting or stopping after you easily setup a smart water tank controller from Roboidy.",
     code: "IOT_02",
-    categories: "Smart Device",
-    tag: "IOT, smart device, water tank controller",
-    tableDescription: [
-      {
-        name: "",
-        value:
-          "Smart water tank controller is a smart device that can control your water pump efficiently with automatic start/stop water pump and dry run safety. For more details click here.",
-      },
-    ],
+
+    endDescription:
+      "আপনার বাসার পানির পাম্প নিয়ন্ত্রণে সেরা ওয়াটার ট্যাঙ্ক কন্ট্রোলার। খুব সহজে Roboidy থেকে একটি স্মার্ট ওয়াটার ট্যাঙ্ক কন্ট্রোলার সেটআপ করে পানির পাম্প চালু এবং বন্ধ করার কাজ থেকে মুক্ত হোন।",
+    includePackage: [" স্মার্ট ওয়াটার ট্যাঙ্ক ডিভাইস"],
+
     specification: [
       {
         name: "Weight",
@@ -173,8 +182,7 @@ export const products = [
       },
       {
         name: "Building Height",
-        value:
-          "1story ( 45ft ), 2story ( 60ft ), 3story ( 75ft ), 4story ( 90ft ), 5story ( 105ft )",
+        value: "১ তলা (৪০ ফুট), ৩ তলা (৬০ ফুট), ৫ তলা (১২০ ফুট)",
       },
     ],
   },

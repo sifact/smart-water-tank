@@ -14,13 +14,13 @@ import Link from "next/link";
 const Feature2 = () => {
   return (
     <div className="relative">
-      <Image
+      {/* <Image
         className="hidden md:block absolute top-12 left-0 "
         src="https://watertankcontroller.com/wp-content/uploads/2023/08/6.png"
         alt="bg-img"
         width={150}
         height={150}
-      />
+      /> */}
       {/* first */}
       <div className=" flex  max-sm:items-center  max-sm:flex-col container mx-auto max-sm:mb-32">
         <div className="sm:w-1/2 flex justify-center">

@@ -18,10 +18,20 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const userJSON = localStorage.getItem("user_data");
+  const user = JSON.parse(userJSON!);
 
+  // console.log(user);
+
+  const handleClick = () => {
+    localStorage.removeItem("user_data");
+    router.refresh();
+  };
   const data = [
     {
       id: 1,
@@ -82,21 +92,39 @@ const Navbar = () => {
                               route.active ? "text-primaryLight" : "text-black"
                             )}
                           >
-                            {route.label}
+                            {user && route.label === "Dashboard"
+                              ? route.label
+                              : route.label !== "Dashboard" && route.label}
                           </Link>
                         </SheetClose>
                       ))}
+
+                      {user ? (
+                        <SheetClose asChild>
+                          <Button
+                            onClick={handleClick}
+                            className="font-bold"
+                            variant="customOutline"
+                            size="customOutline"
+                          >
+                            Log out
+                          </Button>
+                        </SheetClose>
+                      ) : (
+                        <Link href="/login" className="">
+                          <SheetClose asChild>
+                            <Button
+                              className="font-bold"
+                              variant="custom"
+                              size="custom"
+                            >
+                              Log-in
+                              <LogIn className="ml-2 h-4 w-4" />
+                            </Button>
+                          </SheetClose>
+                        </Link>
+                      )}
                     </nav>
-                    <Link href="/login">
-                      <Button
-                        className="font-bold text-white"
-                        variant="custom"
-                        size="custom"
-                      >
-                        Log-in
-                        <LogIn className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
                   </SheetDescription>
                 </SheetHeader>
               </SheetContent>
@@ -119,17 +147,30 @@ const Navbar = () => {
                   route.active ? "text-primaryLight" : "text-black"
                 )}
               >
-                {route.label}
+                {user && route.label === "Dashboard"
+                  ? route.label
+                  : route.label !== "Dashboard" && route.label}
               </Link>
             ))}
           </nav>
         </div>
-        <Link href="/login" className="max-sm:hidden">
-          <Button className="text-sm" variant="custom" size="custom">
-            Log-in
-            <LogIn className="ml-2 h-4 w-4" />
+        {user ? (
+          <Button
+            onClick={handleClick}
+            className="text-sm max-sm:hidden"
+            variant="customOutline"
+            size="customOutline"
+          >
+            Log out
           </Button>
-        </Link>
+        ) : (
+          <Link href="/login" className="max-sm:hidden">
+            <Button className="text-sm" variant="custom" size="custom">
+              Log-in
+              <LogIn className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );

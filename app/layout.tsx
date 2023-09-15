@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 // const inter = Inter({ subsets: ["latin"] });
+// import { UserAuthContextProvider } from "../context/UserAuthContext";
 
 export const metadata: Metadata = {
   title: "Smart Water Tank Controller",
@@ -20,10 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {/* <UserAuthContextProvider> */}
         <Toaster />
+
         <Navbar />
+
         {children}
         <Footer />
+        {/* </UserAuthContextProvider> */}
       </body>
     </html>
   );

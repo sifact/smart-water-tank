@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import Image from "next/image";
 
 import { Button } from "../../../../../components/ui/button";
@@ -14,8 +14,9 @@ import { products } from "./data";
 import { BaggageClaim, Star } from "lucide-react";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export const Products = async () => {
+export const Products = () => {
   return (
     <div className="container mx-auto my-32">
       <div className="grid sm:grid-cols-2   lg:grid-cols-3 gap-6 w-full  sm:w-[90%] mx-auto">
@@ -28,6 +29,16 @@ export const Products = async () => {
 };
 
 const Product = ({ product }: any) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <Link href={`/Shop/${product?.id}`}>
       <Card
@@ -56,8 +67,8 @@ const Product = ({ product }: any) => {
             </div>
           </CardHeader>
         </Link>
-        <div className="px-6 flex flex-col gap-6 ">
-          <CardTitle className="tracking-wider text-center text-sm font-bold">
+        <div className="px-6 mt-4 flex flex-col gap-6 ">
+          <CardTitle className=" text-center text-sm sm:text-xl font-smibold opacity-90">
             {product.name}
           </CardTitle>
           <Button
@@ -76,7 +87,7 @@ const Product = ({ product }: any) => {
               <Star className="h-4 w-4" />
             </div>
 
-            <CardDescription className="font-bold text-red-500 flex gap-1 text-xl">
+            <CardDescription className="font-bold text-red-500 flex gap-1 text:sm sm:text-xl">
               <span className="flex items-center gap-1">
                 <FaBangladeshiTakaSign /> {product?.minPrice}
               </span>

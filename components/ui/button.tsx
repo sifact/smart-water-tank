@@ -14,6 +14,8 @@ const buttonVariants = cva(
           "bg-secondaryCustom text-green-700 font-bold hover:bg-secondaryCustom/90",
 
         customSecondary: "bg-transparent text-green-700 text-font-bold",
+        customTertiary: "bg-primaryLight text-white hover:bg-primaryLight/90",
+        customOutline: "bg-transparent text-green-primaryLight text-font-bold",
 
         // default
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -33,6 +35,8 @@ const buttonVariants = cva(
         customSecondary:
           " px-4 rounded-full border-2 border-primaryLight  py-2",
 
+        customOutline:
+          " px-10 text-xl rounded-tl-3xl border border-promaryLight rounded-br-3xl py-4",
         // default
         default: "h-10 px-4 py-2",
 

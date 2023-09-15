@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { BaggageClaim } from "lucide-react";
+import { BaggageClaim, CheckCircle, ListChecks } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { products } from "../components/data";
@@ -24,6 +24,7 @@ import {
 import { DataTable } from "@/components/ui/data-table";
 import { columns } from "./components/column";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
 
 const page = ({ params }: { params: { productId: string } }) => {
   const [buildingHeight, setBuildingHeight] = useState("৪০ ফুট - ১২০ ফুট");
@@ -133,14 +134,16 @@ const page = ({ params }: { params: { productId: string } }) => {
             >
               In stock
             </Button> */}
-            <Button
-              className="mr-auto text-sm font-bold"
-              variant="custom"
-              size="custom"
-            >
-              Buy Now
-              <BaggageClaim className="ml-4 h-6 w-6" />
-            </Button>
+            <Link href="/checkout">
+              <Button
+                className="mr-auto text-sm font-bold"
+                variant="custom"
+                size="custom"
+              >
+                Buy Now
+                <BaggageClaim className="ml-4 h-6 w-6" />
+              </Button>
+            </Link>
 
             <Separator />
 
@@ -155,31 +158,30 @@ const page = ({ params }: { params: { productId: string } }) => {
         <Tabs defaultValue="Description" className="w-full">
           <TabsList className="w-full flex justify-evenly">
             <TabsTrigger value="Description">Description</TabsTrigger>
-            <TabsTrigger value="Additional Information">
-              Additional Information
-            </TabsTrigger>
+            <TabsTrigger value="specification">Specification</TabsTrigger>
           </TabsList>
           <TabsContent value="Description" className="mt-12">
-            <Table className="w-full">
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="">Name</TableHead>
-                  <TableHead>Description</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody className="w-full">
-                {product?.tableDescription!.map((cell) => (
-                  <TableRow className=" w-full" key={cell.name}>
-                    <TableCell className="font-medium w-1/2">
-                      {cell.name}
-                    </TableCell>
-                    <TableCell className="w-1/2">{cell.value}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+            <div className="pb-8">
+              <p className="opacity-60">{product?.endDescription}</p>
+            </div>
+            <Separator />
+            <div className="mt-8">
+              <div className="flex  ">
+                <ListChecks className="h-6 w-6 mr-4 text-green-500" />
+                <h1 className="font-bold text-xl">প্যাকেজে থাকছে</h1>
+              </div>
+
+              {product?.includePackage.map((item) => (
+                <>
+                  <div className="flex items-center pl-[6rem] mt-6" key={item}>
+                    <CheckCircle className="h-6 w-6 mr-4 text-green-500" />{" "}
+                    <p>{item}</p>
+                  </div>
+                </>
+              ))}
+            </div>
           </TabsContent>
-          <TabsContent value="Additional Information" className="mt-12">
+          <TabsContent value="specification" className="mt-12">
             <Table className="w-full">
               <TableHeader>
                 <TableRow>
