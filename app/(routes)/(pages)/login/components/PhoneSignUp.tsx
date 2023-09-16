@@ -31,30 +31,22 @@ const PhoneSignUp = () => {
   const [showForm, setShowForm] = useState(false);
   const [user, setUser] = useState(null);
   const router = useRouter();
-  const url = new URL(window.location.href);
-
-  const destinationParam = url.searchParams.get("destination");
 
   const isDisabled = error !== "" || number === "";
-
-  //   const { setUpRecaptha } = useUserAuth();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/api/users/${number}`
-        );
-        setUser(response.data); // Assuming the response contains the user data
+        const baseUrl = window.location.origin;
+
+        const response = await axios.get(`${baseUrl}/api/users/${number}`);
+        setUser(response.data);
       } catch (error) {
-        // Handle the error (e.g., log it, show an error message)
         console.error("Error fetching user data:", error);
       }
     };
-    if (number.length > 0) fetchData(); // Call the async function
+    if (number.length > 0) fetchData();
   }, [number]);
-
-  // console.log(user);
 
   function setUpRecaptha(number: any) {
     const recaptchaVerifier = new RecaptchaVerifier(
@@ -72,10 +64,6 @@ const PhoneSignUp = () => {
     return signInWithPhoneNumber(auth, number, recaptchaVerifier);
     // recaptchaVerifier.render();
   }
-
-  // if (!inputValue.match(/^(?:\+88|88)?(01[3-9]\d{8})$/)) {
-  //   setError("আপনার মোবাইল নাম্বার সঠিক নয়");
-  // }
 
   const handleChange = (e: any) => {
     const inputValue = e.target.value;
@@ -98,17 +86,25 @@ const PhoneSignUp = () => {
     const formatNumber = "+" + "88" + number;
     try {
       if (user) {
-        localStorage.setItem("user_data", JSON.stringify(user));
-        if (destinationParam) {
-          router.push(destinationParam);
-        } else {
-          router.push("/");
+        if (typeof window !== "undefined" && window.localStorage) {
+          localStorage.setItem("user_data", JSON.stringify(user));
+
+          const url = new URL(window && window.location.href);
+
+          const destinationParam = url.searchParams.get("destination");
+          if (destinationParam) {
+            router.push(destinationParam);
+          } else {
+            router.push("/");
+          }
         }
+        router.refresh();
+      } else {
+        const response = await setUpRecaptha(formatNumber);
+        setResult(response);
+        toast.success("OTP sent");
+        setFlag(true);
       }
-      const response = await setUpRecaptha(formatNumber);
-      setResult(response);
-      toast.success("OTP sent");
-      setFlag(true);
     } catch (err: any) {
       setError(err.message);
     }

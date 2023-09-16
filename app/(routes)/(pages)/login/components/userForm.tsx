@@ -12,12 +12,10 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { User } from "@prisma/client";
 
 import axios from "axios";
-import { Trash } from "lucide-react";
 
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -40,24 +38,13 @@ interface UserFormProps {
 
 const UserForm: React.FC<UserFormProps> = ({ initialData, number }) => {
   const router = useRouter();
-  const pathName = usePathname();
-  console.log(window.location.href);
 
-  const url = new URL(window.location.href);
-
-  const destinationParam = url.searchParams.get("destination");
-
-  //   console.log(destinationParam);
-  const [mobileNumber, setMobileNubmer] = useState("");
-  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const title = initialData ? "Edit billboard" : "Create billboard";
   const description = initialData ? "Edit a billboard." : "Add a new billboard";
   const toastMessage = initialData ? "Billboard updated." : "User created";
   const action = initialData ? "Save changes" : "Create";
-
-  console.log(typeof number);
 
   const form = useForm<UserFormValues>({
     resolver: zodResolver(formSchema),
@@ -81,16 +68,18 @@ const UserForm: React.FC<UserFormProps> = ({ initialData, number }) => {
 
       await axios.post(`/api/users`, data);
 
-      localStorage.setItem("user_data", JSON.stringify(data));
-      router.refresh();
+      if (typeof window !== "undefined" && window.localStorage) {
+        localStorage.setItem("user_data", JSON.stringify(data));
 
-      if (destinationParam) {
-        // console.log(destinationParam);
-        router.push(destinationParam);
-      } else {
-        router.push("/");
+        const url = new URL(window.location.href);
+        const destinationParam = url.searchParams.get("destination");
+        if (destinationParam) {
+          router.push(destinationParam);
+        } else {
+          router.push("/");
+        }
       }
-
+      router.refresh();
       toast.success(toastMessage);
     } catch (error) {
       toast.error("Something went wrong.");

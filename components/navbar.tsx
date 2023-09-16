@@ -20,16 +20,28 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 
+import { useEffect, useState } from "react";
+
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
-  const userJSON = localStorage.getItem("user_data");
-  const user = JSON.parse(userJSON!);
 
-  // console.log(user);
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const userJSON = localStorage.getItem("user_data");
+      const user = JSON.parse(userJSON!);
+      setUser(user);
+    }
+  }, [localStorage.getItem("user_data")]);
 
   const handleClick = () => {
-    localStorage.removeItem("user_data");
+    if (typeof window !== "undefined" && window.localStorage) {
+      localStorage.removeItem("user_data");
+      router.refresh();
+    }
+
     router.refresh();
   };
   const data = [

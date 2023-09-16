@@ -1,11 +1,13 @@
-import Navbar from "@/components/navbar";
+import dynamic from "next/dynamic";
+
 import "./globals.css";
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
+
 import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
-// const inter = Inter({ subsets: ["latin"] });
-// import { UserAuthContextProvider } from "../context/UserAuthContext";
+const DynamicNavbar = dynamic(() => import("../components/navbar"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Smart Water Tank Controller",
@@ -24,7 +26,7 @@ export default function RootLayout({
         {/* <UserAuthContextProvider> */}
         <Toaster />
 
-        <Navbar />
+        <DynamicNavbar />
 
         {children}
         <Footer />
